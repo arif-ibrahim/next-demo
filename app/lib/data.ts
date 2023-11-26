@@ -202,7 +202,6 @@ export async function fetchCustomers() {
 export async function fetchFilteredCustomers(query: string) {
   noStore()
 
-  try {
     const data = await sql<CustomersTable>`
 		SELECT
 		  customers.id,
@@ -228,14 +227,14 @@ export async function fetchFilteredCustomers(query: string) {
     }));
 
     return customers;
-  } catch (err) {
-    console.error('Database Error:', err);
-    throw new Error('Failed to fetch customer table.');
-  }
+ 
 }
 
 export async function getUser(email: string) {
   noStore()
+
+  throw new Error("delete invoicess error");
+  
 
   try {
     const user = await sql`SELECT * FROM users WHERE email=${email}`;
