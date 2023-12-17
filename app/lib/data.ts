@@ -231,10 +231,7 @@ export async function fetchFilteredCustomers(query: string) {
 }
 
 export async function getUser(email: string) {
-  noStore()
-
-  throw new Error("delete invoicess error");
-  
+  noStore()  
 
   try {
     const user = await sql`SELECT * FROM users WHERE email=${email}`;
